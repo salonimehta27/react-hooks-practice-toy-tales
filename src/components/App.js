@@ -14,7 +14,7 @@ function App() {
       .then(cardsArray => setToyCards(cardsArray))
   }, [])
   function addToy(newToy) {
-    setToyCards(...toyCards, newToy)
+    setToyCards([...toyCards, newToy])
   }
   function handleClick() {
     setShowForm((showForm) => !showForm);
@@ -37,7 +37,7 @@ function App() {
       <div className="buttonContainer">
         <button onClick={handleClick}>Add a Toy</button>
       </div>
-      <ToyContainer toycards={toyCards} onDonation={handleDonation} onUpdate={handleUpdate} />
+      <ToyContainer toyCards={toyCards} onDonation={handleDonation} onUpdate={handleUpdate} />
     </>
   );
 }
